@@ -1,6 +1,6 @@
-# Meu Site - GitHub Pages
+# DSL.GitHub.io - Site Pessoal
 
-Um site moderno e responsivo criado com Vite, otimizado para deployment no GitHub Pages.
+Um site moderno e responsivo criado with Vite, otimizado para deployment no GitHub Pages.
 
 ## 🚀 Características
 
@@ -25,8 +25,8 @@ Um site moderno e responsivo criado com Vite, otimizado para deployment no GitHu
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/Site.git
-cd Site
+git clone https://github.com/DSL88/dsl.github.io.git
+cd dsl.github.io
 ```
 
 2. Instale as dependências:
@@ -49,7 +49,7 @@ O projeto está configurado para deploy automático no GitHub Pages usando GitHu
 
 1. Faça push para a branch `main`
 2. O workflow do GitHub Actions será executado automaticamente
-3. O site será publicado em `https://seu-usuario.github.io/Site/`
+3. O site será publicado em `https://dsl88.github.io/`
 
 ### Configuração Manual do GitHub Pages
 
@@ -146,10 +146,14 @@ Contribuições são bem-vindas! Para contribuir:
 
 ## 📞 Contato
 
-Seu Nome - [seu@email.com](mailto:seu@email.com)
+DSL88 - [GitHub Profile](https://github.com/DSL88)
 
-Link do Projeto: [https://github.com/seu-usuario/Site](https://github.com/seu-usuario/Site)
+Link do Projeto: [https://github.com/DSL88/dsl.github.io](https://github.com/DSL88/dsl.github.io)
 
 ---
 
 ⭐ Se este projeto te ajudou, considere dar uma estrela no GitHub!
+
+---
+
+🌐 **Visite o site:** [https://dsl88.github.io](https://dsl88.github.io)
