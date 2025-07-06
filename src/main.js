@@ -20,11 +20,11 @@ class ModernPortfolio {
 
   initializeComponents() {
     // Get DOM elements
-    this.header = document.querySelector('.header');
-    this.mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    this.nav = document.querySelector('.nav');
+    this.header = document.querySelector('.navbar');
+    this.mobileMenuBtn = document.querySelector('.hamburger');
+    this.nav = document.querySelector('.nav-menu');
     this.navLinks = document.querySelectorAll('.nav-link');
-    this.backToTopBtn = document.querySelector('.back-to-top');
+    this.backToTopBtn = document.querySelector('#backToTop');
     this.contactForm = document.querySelector('#contact-form');
     this.loadingScreen = document.querySelector('#loading');
     
@@ -124,9 +124,9 @@ class ModernPortfolio {
     // Back to top button visibility
     if (this.backToTopBtn) {
       if (scrollTop > 500) {
-        this.backToTopBtn.classList.add('visible');
+        this.backToTopBtn.classList.add('show');
       } else {
-        this.backToTopBtn.classList.remove('visible');
+        this.backToTopBtn.classList.remove('show');
       }
     }
     
