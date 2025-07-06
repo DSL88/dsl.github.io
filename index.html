@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Meu site moderno criado com Vite e hospedado no GitHub Pages" />
+    <meta name="keywords" content="site, github pages, vite, javascript" />
+    <meta name="author" content="Seu Nome" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Meu Site" />
+    <meta property="og:description" content="Site moderno criado com Vite" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Meu Site" />
+    <meta property="twitter:description" content="Site moderno criado com Vite" />
+    
+    <title>Meu Site - GitHub Pages</title>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <nav class="navbar">
+          <div class="nav-container">
+            <h1 class="nav-logo">Meu Site</h1>
+            <ul class="nav-menu">
+              <li class="nav-item">
+                <a href="#home" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="#about" class="nav-link">Sobre</a>
+              </li>
+              <li class="nav-item">
+                <a href="#contact" class="nav-link">Contato</a>
+              </li>
+            </ul>
+            <div class="hamburger">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section id="home" class="hero">
+          <div class="hero-content">
+            <h1 class="hero-title">Bem-vindo ao Meu Site</h1>
+            <p class="hero-subtitle">Criado com Vite e hospedado no GitHub Pages</p>
+            <a href="#about" class="cta-button">Saiba Mais</a>
+          </div>
+        </section>
+
+        <section id="about" class="about">
+          <div class="container">
+            <h2>Sobre o Projeto</h2>
+            <p>Este é um site moderno e responsivo criado com as melhores tecnologias web:</p>
+            <div class="features">
+              <div class="feature">
+                <h3>⚡ Vite</h3>
+                <p>Build tool super rápido para desenvolvimento moderno</p>
+              </div>
+              <div class="feature">
+                <h3>📱 Responsivo</h3>
+                <p>Layout adaptável para todos os dispositivos</p>
+              </div>
+              <div class="feature">
+                <h3>🚀 GitHub Pages</h3>
+                <p>Deploy automático e hospedagem gratuita</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="contact">
+          <div class="container">
+            <h2>Entre em Contato</h2>
+            <p>Gostou do projeto? Entre em contato!</p>
+            <form class="contact-form">
+              <input type="text" placeholder="Seu nome" required>
+              <input type="email" placeholder="Seu email" required>
+              <textarea placeholder="Sua mensagem" required></textarea>
+              <button type="submit">Enviar Mensagem</button>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="container">
+          <p>&copy; 2025 Meu Site. Criado com ❤️ usando Vite.</p>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
