@@ -124,10 +124,23 @@ main {
   height: 70px;
 }
 
+.nav-logo-link {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease;
+}
+
+.nav-logo-link:hover {
+  transform: scale(1.05);
+  color: var(--primary-color);
+}
+
 .nav-logo {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--primary-color);
+  margin: 0;
+  transition: color 0.25s ease;
 }
 
 .nav-menu {
@@ -146,6 +159,19 @@ main {
 .nav-link:hover {
   background: var(--accent-color);
   transform: translateY(-1px);
+}
+
+/* Link ativo no menu */
+.nav-link.active {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-1px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav-link.active {
+    background: var(--primary-dark);
+  }
 }
 
 /* Hamburger menu (mobile) */

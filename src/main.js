@@ -12,6 +12,9 @@ function initializeApp() {
   // Configurar scroll suave
   setupSmoothScrolling();
   
+  // Configurar navegação ativa
+  setupActiveNavigation();
+  
   // Configurar formulário de contato
   setupContactForm();
   
@@ -47,7 +50,19 @@ function setupSmoothScrolling() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const href = this.getAttribute('href');
+      
+      // Se for o link home, vai para o topo da página
+      if (href === '#home') {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+        return;
+      }
+      
+      // Para outros links, scroll para a seção correspondente
+      const target = document.querySelector(href);
       if (target) {
         const offsetTop = target.offsetTop - 70; // Compensar altura do header
         window.scrollTo({
@@ -57,6 +72,44 @@ function setupSmoothScrolling() {
       }
     });
   });
+}
+
+// Destacar seção ativa no menu durante scroll
+function setupActiveNavigation() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  if (sections.length === 0 || navLinks.length === 0) return;
+  
+  function updateActiveLink() {
+    let current = '';
+    const scrollPos = window.scrollY + 100; // Offset para considerar o header
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        current = section.getAttribute('id');
+      }
+    });
+    
+    // Se estiver no topo da página, considerar como "home"
+    if (window.scrollY < 100) {
+      current = 'home';
+    }
+    
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  }
+  
+  // Executar ao carregar e durante o scroll
+  updateActiveLink();
+  window.addEventListener('scroll', updateActiveLink);
 }
 
 // Formulário de contato
