@@ -2,8 +2,8 @@ import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // Base path para GitHub Pages (substitua pelo nome do seu repositório)
-  base: '/Site/',
+  // Base path para GitHub Pages - como é um repositório .github.io, o base é '/'
+  base: '/',
   
   build: {
     outDir: 'dist',
