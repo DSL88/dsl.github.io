@@ -1,4 +1,9 @@
-import './style.css'
+// Importação condicional do CSS para evitar travamento
+try {
+  import('./style.css');
+} catch (error) {
+  console.warn('CSS não pôde ser importado:', error);
+}
 
 // Modern Portfolio Website with Advanced Features
 class ModernPortfolio {
