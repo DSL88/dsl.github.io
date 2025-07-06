@@ -3,6 +3,7 @@ import './style.css'
 // Modern Portfolio Website with Advanced Features
 class ModernPortfolio {
   constructor() {
+    console.log('ModernPortfolio: Constructor iniciado');
     this.isLoading = true;
     this.currentSection = 'home';
     this.isMobileMenuOpen = false;
@@ -10,15 +11,18 @@ class ModernPortfolio {
   }
 
   init() {
+    console.log('ModernPortfolio: Init iniciado');
     this.initializeComponents();
     this.setupEventListeners();
     this.setupIntersectionObserver();
     this.handleLoadingScreen();
     this.initParallax();
     this.initNotifications();
+    console.log('ModernPortfolio: Init concluído');
   }
 
   initializeComponents() {
+    console.log('ModernPortfolio: initializeComponents iniciado');
     // Get DOM elements
     this.header = document.querySelector('.navbar');
     this.mobileMenuBtn = document.querySelector('.hamburger');
@@ -28,8 +32,19 @@ class ModernPortfolio {
     this.contactForm = document.querySelector('#contact-form');
     this.loadingScreen = document.querySelector('#loading');
     
+    console.log('ModernPortfolio: Elementos encontrados:', {
+      header: !!this.header,
+      mobileMenuBtn: !!this.mobileMenuBtn,
+      nav: !!this.nav,
+      navLinks: this.navLinks.length,
+      backToTopBtn: !!this.backToTopBtn,
+      contactForm: !!this.contactForm,
+      loadingScreen: !!this.loadingScreen
+    });
+    
     // Add smooth scrolling class to html
     document.documentElement.classList.add('smooth-scroll');
+    console.log('ModernPortfolio: initializeComponents concluído');
   }
 
   setupEventListeners() {
@@ -180,27 +195,41 @@ class ModernPortfolio {
   }
 
   handleLoadingScreen() {
+    console.log('ModernPortfolio: handleLoadingScreen iniciado');
+    const loadingElement = document.getElementById('loading');
+    console.log('Loading screen element encontrado:', !!loadingElement);
+    
+    if (!loadingElement) {
+      console.error('ModernPortfolio: Elemento #loading não encontrado!');
+      return;
+    }
+    
     // Simulate loading time
     setTimeout(() => {
-      if (this.loadingScreen) {
-        this.loadingScreen.style.opacity = '0';
-        setTimeout(() => {
-          this.loadingScreen.style.display = 'none';
-          this.isLoading = false;
-          this.animateInitialElements();
-        }, 500);
-      }
-    }, 2000);
+      console.log('ModernPortfolio: Timeout executado, removendo loading screen');
+      loadingElement.style.transition = 'opacity 0.5s ease';
+      loadingElement.style.opacity = '0';
+      
+      setTimeout(() => {
+        loadingElement.style.display = 'none';
+        this.isLoading = false;
+        console.log('ModernPortfolio: Loading screen removido');
+        this.animateInitialElements();
+      }, 500);
+    }, 1000); // Reduzido para 1 segundo para teste
   }
 
   animateInitialElements() {
+    console.log('ModernPortfolio: animateInitialElements iniciado');
     // Animate hero section elements
     const heroElements = document.querySelectorAll('.hero .animate-on-scroll');
+    console.log('ModernPortfolio: Elementos hero encontrados:', heroElements.length);
     heroElements.forEach((el, index) => {
       setTimeout(() => {
         el.classList.add('animate-in');
       }, index * 200);
     });
+    console.log('ModernPortfolio: animateInitialElements concluído');
   }
 
   initParallax() {
@@ -333,8 +362,11 @@ class ModernPortfolio {
 
 // Initialize the portfolio when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('DOMContentLoaded: Evento disparado, criando ModernPortfolio');
   new ModernPortfolio();
 });
+
+console.log('Script carregado: Event listener para DOMContentLoaded registrado');
 
 // Handle page visibility change for performance
 document.addEventListener('visibilitychange', () => {
